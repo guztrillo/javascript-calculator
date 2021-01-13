@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+* {
+     box-sizing: border-box;
+}
+html,body {
+     overflow: hidden;
+     background-color: rgba(210, 234, 241, 0.75);
+}
+#container {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     height: 100vh;
+     user-select: none;
+}
+
+#screen{
+     width: 320px;
+     font-family: 'Share Tech Mono', monospace;
+     background-color: rgb(36, 35, 35);
+}
+
+#display, #formula {
+     text-align: right;
+     padding: 5px;
+     font-size: 25px;
+     min-height: 40px;
+     /* word-wrap: break-word; */
+     word-break: break-all;
+     color: rgb(226, 226, 226);
+}
+
+#formula {
+     font-size: 20px;
+     color: orange;
+}
+
+
+#pad {
+     width: 320px;
+     display: grid;
+     grid-template-columns: repeat(4,1fr);
+     grid-template-rows: repeat(5,1fr);
+     grid-template-areas: 
+     "seven eight nine divide"
+     "four five six multiply"
+     "one two three substract"
+     "zero zero zero add"
+     "ac del decimal equals";
+}
+
+#clear {
+     grid-area: ac;
+}
+#del {
+     grid-area: del;
+}
+#zero {
+     grid-area: zero;
+}
+
+.padkey {
+     height: 60px;
+}
+button {
+	/* background: none; */
+	/* color: inherit; */
+	border: none;
+	padding: 0;
+	cursor: default;
+     outline: inherit;
+     border-radius: 0;
+     font-family: 'Roboto Mono', monospace;
+     font-size: 25px;
+}
+button:hover {
+     font-weight: bold;
+}
+.numbers, #decimal{
+     background-color: lightgray;
+}
+
+.operator {
+     background-color: rebeccapurple;
+}
+
+.operator:hover {
+     background-color: rgb(156, 81, 231);
+}
+
+#clear {
+     background-color: rgb(238, 64, 64);
+}
+#del {
+     background-color: rgb(81, 107, 255);
+}
+#del:hover {
+     background-color: blue;
+}
+#clear:hover {
+     background-color: red;
+}
+#equals {
+     background-color: rgb(41, 167, 41);
+}
+#equals:hover {
+     background-color: orange;
+}
+
+.numbers:hover, #decimal:hover {
+     /* opacity: 0.9; */
+     /* border: 2px solid; */
+     background-color: rgb(124, 133, 134);
+}
+
+button:hover {
+     transition: background-color 0.150s ease-in-out;
+}
