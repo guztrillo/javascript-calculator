@@ -119,3 +119,24 @@ button:hover {
 button:hover {
      transition: background-color 0.150s ease-in-out;
 }
+
+@media only screen and (max-width: 600px){
+     button {
+          font-size: 25px;
+     }
+     #pad {
+          width: 320px;
+     }
+     #screen{
+          width: 320px;
+     }
+     
+     #display {
+          font-size: 25px;
+     }
+     
+     #formula {
+          font-size: 20px;
+          min-height: 38px;
+     }
+}
