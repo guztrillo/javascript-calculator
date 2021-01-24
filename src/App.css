@@ -18,7 +18,7 @@ html,body {
 }
 
 #screen{
-     width: 320px;
+     width: 400px;
      font-family: 'Share Tech Mono', monospace;
      background-color: rgb(36, 35, 35);
 }
@@ -26,21 +26,21 @@ html,body {
 #display, #formula {
      text-align: right;
      padding: 5px;
-     font-size: 25px;
-     min-height: 40px;
-     /* word-wrap: break-word; */
+     font-size: 30px;
+     height: auto;
      word-break: break-all;
      color: rgb(226, 226, 226);
 }
 
 #formula {
-     font-size: 20px;
+     font-size: 25px;
+     min-height: 44px;
      color: orange;
 }
 
 
 #pad {
-     width: 320px;
+     width: 400px;
      display: grid;
      grid-template-columns: repeat(4,1fr);
      grid-template-rows: repeat(5,1fr);
@@ -63,7 +63,7 @@ html,body {
 }
 
 .padkey {
-     height: 60px;
+     height: 70px;
 }
 button {
 	/* background: none; */
@@ -74,7 +74,7 @@ button {
      outline: inherit;
      border-radius: 0;
      font-family: 'Roboto Mono', monospace;
-     font-size: 25px;
+     font-size: 30px;
 }
 button:hover {
      font-weight: bold;
