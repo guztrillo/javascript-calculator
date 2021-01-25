@@ -179,26 +179,35 @@ export default class App extends Component {
     }
   }
   handleDecimal() {
-    const { input, formula } = this.state
+    const { input, formula, prevRes } = this.state
     this.setState({
       operatorFlag: false,
       negativeFlag: 0,
       equalKey: 0
     })
-    if (input === '0' && formula === '') { // si no hay nada en la calculadora
-      this.setState({
-        input: input + '.',
-        formula: formula + '0.',
-      })
-    } else if (formula.slice(formula.length - 1).search(/\+|-|\/|\*/) === 0) { // si encuntra un operador en el input y se clickea un punto decimal, entonces se sustituye por "0."
+    if(prevRes === ''){
+      if (input === '0' && formula === '') { // si no hay nada en la calculadora
+        this.setState({
+          input: input + '.',
+          formula: formula + '0.',
+        })
+      } else if (formula.slice(formula.length - 1).search(/\+|-|\/|\*/) === 0) { // si encuntra un operador en el input y se clickea un punto decimal, entonces se sustituye por "0."
+        this.setState({
+          input: '0.',
+          formula: formula + '0.'
+        })
+      } else if (!input.includes('.')) { // si el input ya incluye un punto entonces no puede agregar otro
+        this.setState({
+          input: input + '.',
+          formula: formula + '.'
+        })
+      }
+    } else {
       this.setState({
         input: '0.',
-        formula: formula + '0.'
-      })
-    } else if (!input.includes('.')) { // si el input ya incluye un punto entonces no puede agregar otro
-      this.setState({
-        input: input + '.',
-        formula: formula + '.'
+        formula: '0.',
+        saved: '',
+        prevRes: ''
       })
     }
   }
